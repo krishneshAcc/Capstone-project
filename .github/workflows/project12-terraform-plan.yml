@@ -1,0 +1,41 @@
+name: Project 12 - Terraform Plan
+
+on:
+  push:
+    branches:
+      - feature/project12-terraform-plan
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  terraform-plan:
+    name: Terraform Plan
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: Project 12 - Infrastructure CI Trigger/terraform
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan -out=tfplan
+
+      - name: Upload Terraform Plan Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: project12-terraform-plan
+          path: Project 12 - Infrastructure CI Trigger/terraform/tfplan
+          retention-days: 7
