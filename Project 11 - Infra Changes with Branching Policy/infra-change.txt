@@ -1,0 +1,10 @@
+Project 11 - Infrastructure Change
+
+Change Type: Configuration Update
+Environment: Development
+Resource: Web Server
+Change Description: Updated web server configuration.
+Change Reason: Demonstrate controlled infrastructure changes using Git branching.
+Branch: feature/project11-branching-policy
+Review Required: Yes
+Approval Required: Before merging into main
