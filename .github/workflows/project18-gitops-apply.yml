@@ -1,0 +1,33 @@
+name: Project 18 - GitOps Infra Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform-apply:
+    name: Terraform Apply
+    runs-on: ubuntu-latest
+
+    environment: project18-approval
+
+    defaults:
+      run:
+        working-directory: Project 12 - Infrastructure CI Trigger/terraform
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
