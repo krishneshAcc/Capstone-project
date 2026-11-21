@@ -1,0 +1,18 @@
+{
+  "widgets": [
+    {
+      "type": "log",
+      "width": 24,
+      "height": 8,
+      "properties": {
+        "region": "ap-south-1",
+        "title": "Project 17 - System Logs",
+        "view": "table",
+        "logGroupNames": [
+          "Project17-SystemLogs"
+        ],
+        "query": "fields @timestamp, @message | sort @timestamp desc | limit 20"
+      }
+    }
+  ]
+}
