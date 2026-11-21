@@ -1,9 +1,7 @@
 name: Project 18 - GitOps Infra Deployment
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   terraform-apply:
