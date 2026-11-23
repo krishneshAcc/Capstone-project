@@ -1,0 +1,14 @@
+{
+  "commands": [
+    "echo '=== PROJECT 23 IAM ROLE TEST ==='",
+    "echo '=== AWS IDENTITY ==='",
+    "aws sts get-caller-identity",
+    "echo '=== S3 BUCKET ACCESS ==='",
+    "aws s3 ls s3://project23-iam-test-590507089733/",
+    "echo '=== S3 UPLOAD TEST ==='",
+    "echo 'Project23-IAM-role-access-test' > /tmp/project23-test.txt",
+    "aws s3 cp /tmp/project23-test.txt s3://project23-iam-test-590507089733/project23-test.txt",
+    "aws s3 ls s3://project23-iam-test-590507089733/",
+    "echo '=== PROJECT 23 TEST COMPLETE ==='"
+  ]
+}

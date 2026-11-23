@@ -1,0 +1,57 @@
+PROJECT 23 - AWS RESOURCE DETAILS
+=================================
+
+AWS Region:
+ap-south-1 (Mumbai)
+
+AWS Account:
+590507089733
+
+EC2 Instance:
+Name: Project23-IAM-S3-Test-Krishnesh
+Instance ID: i-053e37a0240d773b4
+Instance Type: t3.micro
+AMI: Amazon Linux 2023
+State: Running
+SSM Status: Online
+
+S3 Bucket:
+project23-iam-test-590507089733
+Versioning: Enabled
+
+IAM Role:
+Project23-EC2-S3-Role-Krishnesh
+
+Instance Profile:
+Project23-Krishnesh-Instance-Profile
+
+Managed Policy:
+AmazonSSMManagedInstanceCore
+
+Inline Policy:
+Project23-Dedicated-S3-Access
+
+Security Group:
+Project23-Dedicated-SG
+ID: sg-0c8d60d6e631838e1
+Inbound Rules: None
+Outbound Rules: Allowed
+
+Subnet:
+subnet-0391feeb69966b00f
+
+VPC:
+vpc-03389c41f719f68ac
+
+TEST FILE:
+project23-test.txt
+
+S3 Object:
+s3://project23-iam-test-590507089733/project23-test.txt
+
+VERIFICATION:
+SSM command execution: SUCCESS
+IAM role assumption: SUCCESS
+S3 bucket listing: SUCCESS
+S3 upload: SUCCESS
+Security group inbound rules: NONE
