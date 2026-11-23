@@ -1,0 +1,14 @@
+{
+"Rules": [
+    {
+      "ID": "Expire-Archived-Logs-After-30-Days",
+      "Status": "Enabled",
+      "Filter": {
+        "Prefix": "logs/"
+      },
+      "Expiration": {
+        "Days": 30
+      }
+    }
+  ]
+}
