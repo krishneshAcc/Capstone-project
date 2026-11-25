@@ -25,7 +25,7 @@
       file_path = "/var/log/syslog"
       from_beginning = true
       log_group_class = ""
-      log_group_name = "Project17-SystemLogs"
+      log_group_name = "/capstone/project17-syslog"
       log_stream_name = "ubuntu-syslog"
       pipe = false
       retention_in_days = -1
@@ -37,7 +37,7 @@
       file_path = "/var/log/auth.log"
       from_beginning = true
       log_group_class = ""
-      log_group_name = "Project17-SystemLogs"
+      log_group_name = "/capstone/project17-syslog"
       log_stream_name = "ubuntu-auth"
       pipe = false
       retention_in_days = -1

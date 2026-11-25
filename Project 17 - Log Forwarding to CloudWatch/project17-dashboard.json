@@ -1,17 +1,49 @@
 {
   "widgets": [
     {
-      "type": "log",
-      "width": 24,
-      "height": 8,
+      "type": "metric",
+      "x": 0,
+      "y": 0,
+      "width": 12,
+      "height": 6,
       "properties": {
-        "region": "ap-south-1",
-        "title": "Project 17 - System Logs",
-        "view": "table",
-        "logGroupNames": [
-          "Project17-SystemLogs"
+        "metrics": [
+          [
+            "AWS/Logs",
+            "IncomingLogEvents",
+            "LogGroupName",
+            "/capstone/project17-syslog"
+          ]
         ],
-        "query": "fields @timestamp, @message | sort @timestamp desc | limit 20"
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "ap-south-1",
+        "title": "Project 17 - Incoming Log Events",
+        "period": 300,
+        "stat": "Sum"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [
+            "AWS/Logs",
+            "IncomingBytes",
+            "LogGroupName",
+            "/capstone/project17-syslog"
+          ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "ap-south-1",
+        "title": "Project 17 - Incoming Log Bytes",
+        "period": 300,
+        "stat": "Sum"
       }
     }
   ]
