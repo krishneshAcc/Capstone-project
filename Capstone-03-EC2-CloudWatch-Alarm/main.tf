@@ -31,6 +31,14 @@ resource "aws_instance" "alarm_ec2" {
   subnet_id              = data.aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
+  user_data = <<-EOF
+    #!/bin/bash
+    echo "Starting automatic CPU load test..." > /var/log/cpu-stress.log
+    nohup timeout 300 bash -c 'while true; do :; done' >> /var/log/cpu-stress.log 2>&1 &
+  EOF
+
+  user_data_replace_on_change = true
+
   tags = {
     Name = "CloudWatchAlarmServer"
   }
